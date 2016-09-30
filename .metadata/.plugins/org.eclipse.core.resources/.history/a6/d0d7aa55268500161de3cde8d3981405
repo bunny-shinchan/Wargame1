@@ -1,0 +1,24 @@
+package com.jesseboyd.warGame;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CardTest {
+
+	Card card1 = new Card();
+
+	@Test
+	public void testCanCreateCard(){
+		assertNotNull(card1);
+	}
+	
+	@Test
+	public void testCanCreateDeck(){
+		card1.create(4, 16);
+		assertEquals(64, card1.getDeckOfCards().size());
+	}
+	
+	
+
+}

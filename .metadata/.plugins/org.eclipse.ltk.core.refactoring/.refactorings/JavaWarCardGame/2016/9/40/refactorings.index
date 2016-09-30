@@ -1,0 +1,17 @@
+1475023163457	Rename package 'com.jesseboyd.war'
+1475023185625	Rename package 'com.jesseboyd.war'
+1475023532752	Move compilation unit
+1475024188609	Rename type 'PlayingCard'
+1475024198937	Rename type 'WarCard'
+1475024202960	Rename type 'WarCardTest'
+1475086801146	Rename field 'card1'
+1475088952305	Rename local variable 'playerArray'
+1475091574979	Rename field 'cardPosition'
+1475100577373	Delete element
+1475100599323	Extract interface 'Card'
+1475106827091	Delete element
+1475107236279	Move compilation unit
+1475114078409	Rename method 'getScore'
+1475161751839	Rename field 'winRow'
+1475162333019	Rename field 'wins'
+1475163048812	Rename local variable 'i'

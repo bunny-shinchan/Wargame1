@@ -1,0 +1,15 @@
+package com.jesseboyd.warGame;
+
+public class WarApp {
+
+	public void play(int numberOfSuits, int numberOfRanks, int numberOfPlayers) {
+		Deck deck = new Deck();
+		deck.create(numberOfSuits, numberOfRanks);
+		deck.shuffle();
+		deck.deal(numberOfPlayers);
+		
+	}	
+
+	
+	
+}

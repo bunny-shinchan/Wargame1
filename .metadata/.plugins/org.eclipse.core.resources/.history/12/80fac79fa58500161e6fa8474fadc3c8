@@ -1,0 +1,36 @@
+package com.jesseboyd.warGame;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CardTest {
+
+	Card card1 = new Card();
+
+	@Before
+	public void setUp() {
+		card1.create(4, 16);
+	}
+
+	@Test
+	public void testCanCreateCard() {
+		assertNotNull(card1);
+	}
+
+	@Test
+	public void testCanCreateDeck() {
+		assertEquals(64, card1.getDeckOfCards().size());
+	}
+
+	@Test
+	public void testShuffle() throws Exception {
+		int originalCard = card1.getDeckOfCards().get(5);
+		System.out.println(card1.getDeckOfCards().stream());
+		card1.shuffle();
+		int shuffledCard = card1.getDeckOfCards().get(5);
+		assertNotEquals(originalCard, shuffledCard);
+	}
+
+}

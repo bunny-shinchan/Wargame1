@@ -1,0 +1,17 @@
+package com.jesseboyd.warGame;
+
+public class WarCard {
+
+	// war cards can have a value from 1-14
+	
+	private int cardValue;
+	
+	public WarCard(int cardValue) {
+		this.cardValue = cardValue;
+	}
+
+	public int getValue() {
+		return 1;
+	}
+
+}

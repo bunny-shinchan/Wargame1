@@ -1,0 +1,19 @@
+package com.jesseboyd.warGame;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+public class Card  {
+
+	public String getTitle() {
+		return "i am a war card";
+	}
+
+
+
+	
+
+}

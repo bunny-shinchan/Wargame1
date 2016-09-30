@@ -1,0 +1,34 @@
+package com.jesseboyd.warGame;
+
+public class WarApp {
+
+//	private int numberOfSuits;
+//	private int numberOfRanks;
+//	private int numberOfPlayers;
+	
+	public void play(int numberOfSuits, int numberOfRanks, int numberOfPlayers) {
+		Deck deck = new Card();
+		deck.create(numberOfSuits, numberOfRanks);
+		
+		
+		
+		//		this.numberOfSuits = numberOfSuits;
+//		this.numberOfRanks = numberOfRanks;
+//		this.numberOfPlayers = numberOfPlayers;
+	}
+
+//	public int getNumberOfSuits() {
+//		return numberOfSuits;
+//	}
+//
+//	public int getNumberOfRanks() {
+//		return numberOfRanks;
+//	}
+//
+//	public int getNumberOfPlayers() {
+//		return numberOfPlayers;
+//	}
+
+	
+	
+}

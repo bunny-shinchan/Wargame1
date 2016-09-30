@@ -1,0 +1,9 @@
+package com.jesseboyd.warGame;
+
+public class WarCard {
+
+	public int getValue() {
+		return 1;
+	}
+
+}

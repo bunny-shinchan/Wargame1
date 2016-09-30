@@ -1,0 +1,22 @@
+package com.jesseboyd.warGame;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class WarPlayerTest {
+
+	Card card;
+	
+	@Before
+	public void setUP(){
+		card = new WarCard();
+	}
+	
+	@Test
+	public void test() {
+		assertNotNull(card.getValue());
+	}
+
+}

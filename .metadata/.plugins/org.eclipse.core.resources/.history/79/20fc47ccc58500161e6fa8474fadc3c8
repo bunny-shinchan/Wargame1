@@ -1,0 +1,14 @@
+package com.jesseboyd.warGame;
+
+import static org.junit.Assert.*;
+
+import java.util.Iterator;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CardTest {
+
+	
+
+}

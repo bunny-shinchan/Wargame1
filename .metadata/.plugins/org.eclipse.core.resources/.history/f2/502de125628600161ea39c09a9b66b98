@@ -1,0 +1,130 @@
+package com.jesseboyd.warGame;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Deck {
+
+	private int totalCards;
+	private List<Integer> deckOfCards;
+	// private int numberOfRanks;
+	private int cardRowPosition = 0;
+	private int numberOfPlayers;
+	int eachPlayerCardCount;
+	int[][] playerCardsArray;
+	int currentDeckPosition = 0; // starts at zero and moves to end of each
+	int[][] winTallyArray;
+	List<WarPlayer> players;
+	int points = 1;
+
+	public void create(int numberOfSuits, int numberOfRanks, int numberOfPlayers, List<WarPlayer> players) {
+		// this.numberOfRanks = numberOfRanks;
+		this.totalCards = numberOfSuits * numberOfRanks;
+		this.numberOfPlayers = numberOfPlayers;
+		this.players = players;
+		// For each suit put a sequence up to the user defined ranks
+		deckOfCards = new ArrayList<Integer>();
+		for (int i = 0; i < numberOfSuits; i++) {
+			for (int s = 0; s < numberOfRanks; s++) {
+				deckOfCards.add(s);
+			}
+		}
+		System.out.println("Deck has been created with " + numberOfSuits + " suits and " + numberOfRanks + " ranks!");
+	}
+
+	public void shuffle() {
+		Collections.shuffle(deckOfCards);
+		System.out.println("Deck has been shuffled");
+	}
+
+	public int[][] deal() {
+		eachPlayerCardCount = totalCards / numberOfPlayers;
+		playerCardsArray = new int[eachPlayerCardCount][numberOfPlayers];
+		// loop through shuffled deck and place cards into an array column for
+		// each player
+		int position = 0;
+		for (int i = 0; i < eachPlayerCardCount; i++) {
+			for (int z = 0; z < numberOfPlayers; z++) {
+				playerCardsArray[i][z] = deckOfCards.get(position);
+				position++;
+			}
+		}
+		System.out.println("cards have been dealt to all " + numberOfPlayers + " players!");
+		return playerCardsArray;
+	}
+
+	public List<Integer> getDeckOfCards() {
+		return deckOfCards;
+	}
+
+	public void getNextCards() {
+		if (winTallyArray == null) {
+			winTallyArray = new int[eachPlayerCardCount][numberOfPlayers];
+		}
+
+		if (cardRowPosition == playerCardsArray.length) {
+			System.out.println("no more Cards!");
+			System.out.println("final score is...");
+
+		}
+
+		int winningPlayer = compareCards();
+
+		players.get(winningPlayer).addPoints(points);
+		// reset points to base
+		points = 2;
+		System.out.println(players.get(winningPlayer - 1).getName() + " wins!!!!");
+		cardRowPosition++;
+
+	}
+
+	public String getWinner() {
+		String scoreOut = "";
+		for (int i = 0; i < numberOfPlayers; i++) {
+			int startScore = 0;
+			int playerScore = players.get(i).getScrore();
+			System.out.println(players.get(i).getName() + " score is " + playerScore);
+			int winner = 0;
+			if (playerScore > startScore) {
+				winner = i;
+			}
+			scoreOut = players.get(winner).getName() + " is the winner!";
+		}
+		return scoreOut;
+	}
+
+	public int compareCards() {
+		// read each players cards and pick winner
+		int winner = 0;
+		for (int player = 0; player < numberOfPlayers; player++) {
+			int baseScore = 0;
+			points = numberOfPlayers;
+			int cardValue = playerCardsArray[currentDeckPosition][player];
+			System.out.println(players.get(player).getName() + " card is " + cardValue);
+			if (cardValue > baseScore) {
+				winner = player;
+				baseScore = cardValue;
+			}
+			// if cards match go down 2 cards for each player
+			if (cardValue == baseScore) {
+				System.out.println("cards match WAR!!");
+				for (player = 0; player < numberOfPlayers; player++) {
+					cardValue = playerCardsArray[currentDeckPosition + 2][player];
+					if (cardValue > baseScore) {
+						winner = player;
+						baseScore = cardValue;
+					}
+					currentDeckPosition = currentDeckPosition + 3; // update
+																	// position
+																	// in deck
+					// war points will be higher
+					points = numberOfPlayers * 3;
+				}
+			}
+
+		}
+		return winner;
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.jesseboyd.warGame;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class WarAppTest {
+	
+	WarApp war = new WarApp();
+
+	@Test
+	public void test() {
+		war.play(4, 16, 2);
+		assertTrue(war.getNumberOfPlayers()==2);
+		
+	}
+
+}

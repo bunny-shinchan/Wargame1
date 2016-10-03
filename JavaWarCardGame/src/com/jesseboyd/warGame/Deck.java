@@ -5,7 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
-
+	// todo
+// if war on the last turn game stops
+	//
 	private int totalCards;
 	private List<Integer> deckOfCards;
 	private int numberOfPlayers;

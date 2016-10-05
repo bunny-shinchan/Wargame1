@@ -1,9 +1,0 @@
-package com.jesseboyd.warGame;
-
-public class Card implements Deck {
-
-	public String getTitle() {
-		return "i am a war card";
-	}
-
-}

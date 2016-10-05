@@ -1,9 +1,0 @@
-package com.jesseboyd.warGame;
-
-public class WarCard implements PlayingCard {
-
-	public String getTitle() {
-		return "i am a war card";
-	}
-
-}

@@ -1,10 +1,16 @@
 
 package wargame1;
+//
+//   Title: GraphicsDrawer source code
+//   Zhipeng (Adrian) Mei
+//   August 30, 2016 
+//   Code version: 2.0
+//   Availability: https://github.com/mlovesexmagic/War-Card-Game-Java-/blob/master/WarCardGame.java
+//  Purpose: This program is a card game called War. For purly entertainment only.
+//  Inputs: This program does not ask use for any input.
+//  Output: The winner of War card game.
+//
 
-/**
- *
- * @author Jimmy Kessie
- */
 import java.util.ArrayList;     //import ArrayList  
 import java.util.Random;        //import Random
 import java.util.List;          //import List
